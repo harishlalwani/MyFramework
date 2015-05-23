@@ -11,7 +11,7 @@ class Router
         // The first part of the URL is the controller name 
         $controller = isset($url_array[0]) ? $url_array[0] : ''; 
         // Check if this is the root DIR
-        if(strpos(ROOT,$controller) !== false)
+        if(SYSDIR == $controller)
         {
             array_shift($url_array); 
             $controller = isset($url_array[0]) ? $url_array[0] : '';

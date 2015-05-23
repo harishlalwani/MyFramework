@@ -1,0 +1,30 @@
+echo Enter base folder name of website 
+read REPLACE_FOLDER_NAME
+echo Enter database name for website 
+read REPLACE_DB_NAME
+echo Enter name of database user 
+read REPLACE_DB_USER
+echo Enter database password
+read REPLACE_PASSWORD
+echo Enter host name 
+read REPLACE_HOST
+echo Enter web path
+read REPLACE_WEB_PATH  
+echo Enter web title
+read REPLACE_WEB_TITLE
+file=".htaccess"
+f='framework'
+sed -i "s/$f/$REPLACE_FOLDER_NAME/" $file
+file="config/config.php"
+f='REPLACE_DB_NAME'
+sed -i "s/$f/$REPLACE_DB_NAME/" $file
+f='REPLACE_DB_USER'
+sed -i "s/$f/$REPLACE_DB_USER/" $file
+f='REPLACE_PASSWORD'
+sed -i "s/$f/$REPLACE_PASSWORD/" $file
+f='REPLACE_HOST'
+sed -i "s/$f/$REPLACE_HOST/" $file
+f='REPLACE_WEB_PATH'
+sed -i 's,'"$f"','"$REPLACE_WEB_PATH"',' $file
+f='REPLACE_WEB_TITLE'
+sed -i "s/$f/$REPLACE_WEB_TITLE/" $file

@@ -1,5 +1,6 @@
 RewriteEngine on 
 RewriteBase / 
+RewriteBase /framework/
 RewriteCond %{REQUEST_FILENAME} !-f 
 RewriteCond %{REQUEST_FILENAME} !-d 
 RewriteCond $1 !^(images|photos|css|js|robots\.txt) 
